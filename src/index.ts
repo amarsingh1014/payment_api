@@ -12,6 +12,13 @@ app.use(express.json());
 
 //price_1MvLG6SGYUYqHJKjbGDbUSun Car price_1MvLFGSGYUYqHJKjvRe1UdZl Banana price_1MvLEPSGYUYqHJKjRXEEqADN Computer
 //price_1MvLDHSGYUYqHJKjF0iWLpnC Book
+// Enable CORS for all origins (you can restrict it to specific origins)
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 
 const idArr: String[] = ['price_1MvLDHSGYUYqHJKjF0iWLpnC', 'price_1MvLEPSGYUYqHJKjRXEEqADN',  'price_1MvLFGSGYUYqHJKjvRe1UdZl',  'price_1MvLG6SGYUYqHJKjbGDbUSun' ]
